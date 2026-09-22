@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#4C7DF0"/>
+  <defs>
+    <!-- 一隻象的輪廓：身體、四腳、頭、鼻子、尾巴。顏色由外層 <g> 決定。 -->
+    <symbol id="ele" viewBox="0 0 300 240" overflow="visible">
+      <ellipse cx="180" cy="120" rx="110" ry="85"/>
+      <rect x="100" y="160" width="40" height="76" rx="16"/>
+      <rect x="150" y="166" width="40" height="70" rx="16"/>
+      <rect x="200" y="166" width="40" height="70" rx="16"/>
+      <rect x="245" y="160" width="40" height="76" rx="16"/>
+      <circle cx="78" cy="96" r="64"/>
+      <path d="M38 122 C 12 152, 8 194, 28 228 C 35 240, 56 236, 52 220 C 42 196, 46 166, 66 142 Z"/>
+      <path d="M286 92 c 16 12, 12 46, -2 60" stroke="inherit" stroke-width="12" fill="none" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+  <!-- 整體縮小一成置中：Android 的 maskable 圖示會切掉外圍 10%，小象在右下角不能被切到。 -->
+  <g transform="translate(256 256) scale(0.9) translate(-256 -256)">
+    <!-- 大象（爸媽） -->
+    <g fill="#ffffff" stroke="#ffffff">
+      <use href="#ele" x="60" y="118" width="300" height="240"/>
+    </g>
+    <ellipse cx="170" cy="216" rx="28" ry="44" fill="#4C7DF0" fill-opacity="0.22"/>
+    <circle cx="112" cy="200" r="9" fill="#4C7DF0"/>
+    <!-- 小象（寶寶）：用底色描邊跟大象分開 -->
+    <g fill="#d6e6fd" stroke="#4C7DF0" stroke-width="14" stroke-linejoin="round" paint-order="stroke">
+      <use href="#ele" x="318" y="262" width="150" height="120"/>
+    </g>
+    <ellipse cx="373" cy="311" rx="14" ry="22" fill="#4C7DF0" fill-opacity="0.22"/>
+    <circle cx="344" cy="303" r="5" fill="#4C7DF0"/>
+  </g>
+</svg>
